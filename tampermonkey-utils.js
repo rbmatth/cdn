@@ -4,6 +4,15 @@ function bar() {
   console.log("bar");
 }
 
+// Global function example
+window.foo = () => {
+  console.log("foo");
+  bar();
+  return 123;
+};
+
+////////////////////////////////////////////////////////////////////////////////
+
 function waitForElement(selector, callback) {
   const observer = new MutationObserver((mutations, observer) => {
     const element = document.querySelector(selector);
@@ -19,12 +28,14 @@ function waitForElement(selector, callback) {
   });
 }
 
-/* Usage
+/* Usage:
 waitForElement('#dynamicElement', (element) => {
     console.log('Element exists:', element);
     // Perform actions on the element
 });
 */
+
+////////////////////////////////////////////////////////////////////////////////
 
 function waitForElementAsync(selector) {
   return new Promise((resolve) => {
@@ -34,9 +45,13 @@ function waitForElementAsync(selector) {
   });
 }
 
-/* Usage
+/* Usage:
 waitForElement('#dynamicElement').then((element) => {
     console.log('Element exists:', element);
     // Perform actions on the element
 });
 */
+
+////////////////////////////////////////////////////////////////////////////////
+
+// TODO: wait for time functions
