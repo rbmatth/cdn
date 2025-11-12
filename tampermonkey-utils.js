@@ -2,14 +2,8 @@ console.log("Tampermonkey utilities loaded.");
 
 function bar() {
   console.log("bar");
+  return "baz";
 }
-
-// Global function example
-window.foo = () => {
-  console.log("foo");
-  bar();
-  return 123;
-};
 
 ////////////////////////////////////////////////////////////////////////////////
 
