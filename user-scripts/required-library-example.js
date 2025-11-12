@@ -14,5 +14,11 @@
 (function() {
     'use strict';
 
+    window.baz = () => {
+        const result = bar();
+        console.log('result:', result);
+        return result;
+    }
+
     bar();
 })();
